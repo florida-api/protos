@@ -1,0 +1,10 @@
+version: v2
+plugins:
+  - remote: buf.build/protocolbuffers/java:v31.1
+    out: gen/java
+  - remote: buf.build/grpc/java:v1.59.0
+    out: gen/java
+    opt:
+      - grpc
+inputs:
+  - directory: protos

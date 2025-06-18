@@ -1,0 +1,8 @@
+version: v2
+plugins:
+  - remote: buf.build/protocolbuffers/cpp:v31.1
+    out: gen/cpp
+  - remote: buf.build/grpc/cpp:v1.59.0
+    out: gen/cpp
+inputs:
+  - directory: protos

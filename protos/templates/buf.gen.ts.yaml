@@ -1,0 +1,12 @@
+version: v2
+plugins:
+  - remote: buf.build/community/stephenh-ts-proto:v1.156.0
+    out: gen/ts
+    opt:
+      - outputServices=grpc-web
+      - esModuleInterop=true
+      - outputClientImpl=false
+      - useExactTypes=false
+      - removeEnumPrefix=true
+inputs:
+  - directory: .

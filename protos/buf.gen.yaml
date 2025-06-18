@@ -1,0 +1,64 @@
+version: v2
+plugins:
+  # Go
+  - remote: buf.build/protocolbuffers/go:v1.31.0
+    out: gen/go
+    opt: paths=source_relative
+  - remote: buf.build/connectrpc/go:v1.18.1
+    out: gen/go
+    opt: paths=source_relative
+  - remote: buf.build/grpc/go:v1.3.0
+    out: gen/go
+    opt: paths=source_relative
+  # TypeScript/JavaScript
+  - remote: buf.build/community/stephenh-ts-proto:v1.156.0
+    out: gen/ts
+    opt:
+      - outputServices=grpc-web
+      - esModuleInterop=true
+      - outputClientImpl=false
+      - useExactTypes=false
+      - removeEnumPrefix=true
+  # Python
+  - remote: buf.build/protocolbuffers/python:v31.1
+    out: gen/python
+  - remote: buf.build/grpc/python:v1.59.0
+    out: gen/python
+  # Rust
+  - remote: buf.build/community/neoeinstein-prost:v0.4.0
+    out: gen/rust
+    opt:
+      - bytes=bytes
+      - file_descriptor_set
+  - remote: buf.build/community/neoeinstein-tonic:v0.4.0
+    out: gen/rust
+  # Java
+  - remote: buf.build/protocolbuffers/java:v31.1
+    out: gen/java
+  - remote: buf.build/grpc/java:v1.59.0
+    out: gen/java
+    opt:
+      - grpc
+  # Kotlin
+  - remote: buf.build/protocolbuffers/java:v31.1
+    out: gen/kotlin
+  - remote: buf.build/grpc/kotlin:v1.4.0
+    out: gen/kotlin
+    opt:
+      - grpc
+  # C++
+  - remote: buf.build/protocolbuffers/cpp:v31.1
+    out: gen/cpp
+  - remote: buf.build/grpc/cpp:v1.59.0
+    out: gen/cpp
+  # C#
+  - remote: buf.build/protocolbuffers/csharp:v31.1
+    out: gen/csharp
+  - remote: buf.build/grpc/csharp:v1.59.0
+    out: gen/csharp
+  # Ruby
+  - remote: buf.build/protocolbuffers/ruby:v31.1
+    out: gen/ruby
+  # PHP
+  - remote: buf.build/protocolbuffers/php:v31.1
+    out: gen/php

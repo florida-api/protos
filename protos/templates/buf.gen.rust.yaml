@@ -1,0 +1,11 @@
+version: v2
+plugins:
+  - remote: buf.build/community/neoeinstein-prost:v0.4.0
+    out: gen/rust
+    opt:
+      - bytes=bytes
+      - file_descriptor_set
+  - remote: buf.build/community/neoeinstein-tonic:v0.4.0
+    out: gen/rust
+inputs:
+  - directory: .

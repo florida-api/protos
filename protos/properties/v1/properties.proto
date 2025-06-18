@@ -1,0 +1,265 @@
+syntax = "proto3";
+
+package properties.v1;
+
+option cc_enable_arenas = true;
+option csharp_namespace = "Florida.Properties.V1";
+option go_package = "github.com/florida-api/protos/gen/go/properties/v1;v1";
+option java_multiple_files = true;
+option java_package = "com.florida.api.properties.v1";
+option objc_class_prefix = "FLP";
+
+message FloridaProperty {
+  // Geometry information containing coordinates and type
+  Geometry geometry = 1;
+
+  // Detailed property information
+  PropertyDetails properties = 2;
+
+  // Type of the property record
+  string type = 3;
+}
+
+message Geometry {
+  // Array of coordinates defining the property boundary
+  repeated double coordinates = 1;
+  // Type of geometry (e.g., "Point", "Polygon")
+  string type = 2;
+}
+
+message PropertyDetails {
+  // Actual year the building was built
+  double act_yr_blt = 1;
+  // Alternative key identifier for the property
+  string alt_key = 2;
+  // Application status of the property
+  string app_stat = 3;
+  // Assessment year
+  double asmnt_yr = 4;
+  // Assessment difference transfer
+  double ass_dif_tr = 5;
+  // Assessment transfer information
+  string ass_trnsfr = 6;
+  // Above street level
+  string atv_strt = 7;
+  // Assessed value class unit
+  double av_class_u = 8;
+  // Assessed value conservation
+  double av_conserv = 9;
+  // Assessed value water recreation
+  double av_h2o_rec = 10;
+  // Assessed value historic commercial
+  double av_hist_co = 11;
+  // Assessed value historic site
+  double av_hist_si = 12;
+  // Assessed value homestead
+  double av_hmstd = 13;
+  // Assessed value non-homestead
+  double av_non_hms = 14;
+  // Assessed value non-school district
+  double av_nsd = 15;
+  // Assessed value residential non-owner
+  double av_resd_no = 16;
+  // Assessed value school district
+  double av_sd = 17;
+  // Assessed value working waterfront
+  double av_wrkng_w = 18;
+  // Base street
+  string bas_strt = 19;
+  // Census block
+  string census_bk = 20;
+  // Clerk number 1
+  string clerk_no1 = 21;
+  // Clerk number 2
+  string clerk_no2 = 22;
+  // County application status
+  string co_app_sta = 23;
+  // County number
+  double co_no = 24;
+  // County number previous homestead
+  double cono_prv_h = 25;
+  // Construction class
+  double const_clas = 26;
+  // Delinquent value
+  double del_val = 27;
+  // District code
+  double distr_cd = 28;
+  // District year
+  double distr_yr = 29;
+  // Department of Revenue use code
+  string dor_uc = 30;
+  // Date of last inspection
+  double dt_last_in = 31;
+  // Effective year built
+  double eff_yr_blt = 32;
+  // Fiduciary address line 1
+  string fidu_addr1 = 33;
+  // Fiduciary address line 2
+  string fidu_addr2 = 34;
+  // Fiduciary code
+  double fidu_cd = 35;
+  // Fiduciary city
+  string fidu_city = 36;
+  // Fiduciary name
+  string fidu_name = 37;
+  // Fiduciary state
+  string fidu_state = 38;
+  // Fiduciary zip code
+  string fidu_zipcd = 39;
+  // File type
+  string file_t = 40;
+  // Group number
+  string grp_no = 41;
+  // Improvement quality
+  string imp_qual = 42;
+  // Just value
+  double jv = 43;
+  // Just value change
+  double jv_chng = 44;
+  // Just value change code
+  double jv_chng_cd = 45;
+  // Just value class unit
+  double jv_class_u = 46;
+  // Just value conservation
+  double jv_conserv = 47;
+  // Just value water recreation
+  double jv_h2o_rec = 48;
+  // Just value historic commercial
+  double jv_hist_co = 49;
+  // Just value historic site
+  double jv_hist_si = 50;
+  // Just value homestead
+  double jv_hmstd = 51;
+  // Just value non-homestead
+  double jv_non_hms = 52;
+  // Just value residential non-owner
+  double jv_resd_no = 53;
+  // Just value working waterfront
+  double jv_wrkng_w = 54;
+  // Land square footage
+  double lnd_sqfoot = 55;
+  // Land units count
+  double lnd_unts_c = 56;
+  // Land value
+  double lnd_val = 57;
+  // Market parcel sale 1
+  string m_par_sal1 = 58;
+  // Market parcel sale 2
+  string m_par_sal2 = 59;
+  // Market area
+  string mkt_ar = 60;
+  // Market property ID
+  string mp_id = 61;
+  // Neighborhood code
+  string nbrhd_cd = 62;
+  // Non-construction value
+  double nconst_val = 63;
+  // Number of buildings
+  double no_buldng = 64;
+  // Number of land units
+  double no_lnd_unt = 65;
+  // Number of residential units
+  double no_res_unt = 66;
+  // Official record book 1
+  string or_book1 = 67;
+  // Official record book 2
+  string or_book2 = 68;
+  // Official record page 1
+  string or_page1 = 69;
+  // Official record page 2
+  string or_page2 = 70;
+  // Original FID
+  double orig_fid = 71;
+  // Owner address line 1
+  string own_addr1 = 72;
+  // Owner address line 2
+  string own_addr2 = 73;
+  // Owner city
+  string own_city = 74;
+  // Owner name
+  string own_name = 75;
+  // Owner state
+  string own_state = 76;
+  // Owner state extra
+  string own_state_extra = 77;
+  // Owner zip code
+  double own_zipcd = 78;
+  // Property appraiser use code
+  string pa_uc = 79;
+  // Parcel split
+  double par_splt = 80;
+  // Parcel ID
+  string parcel_id = 81;
+  // Parcel ID extra
+  string parcel_id_extra = 82;
+  // Physical address line 1
+  string phy_addr1 = 83;
+  // Physical address line 2
+  string phy_addr2 = 84;
+  // Physical city
+  string phy_city = 85;
+  // Physical zip code
+  double phy_zipcd = 86;
+  // Previous homestead
+  double prev_hmstd = 87;
+  // Public land
+  string public_lnd = 88;
+  // Quality code 1
+  string qual_cd1 = 89;
+  // Quality code 2
+  string qual_cd2 = 90;
+  // Range
+  string rng = 91;
+  // Real estate ID
+  string rs_id = 92;
+  // Sale change code 1
+  double s_chng_cd1 = 93;
+  // Sale change code 2
+  double s_chng_cd2 = 94;
+  // Legal description
+  string s_legal = 95;
+  // Sale month 1
+  string sale_mo1 = 96;
+  // Sale month 2
+  string sale_mo2 = 97;
+  // Sale price 1
+  double sale_prc1 = 98;
+  // Sale price 2
+  double sale_prc2 = 99;
+  // Sale year 1
+  double sale_yr1 = 100;
+  // Sale year 2
+  double sale_yr2 = 101;
+  // Section
+  string sec = 102;
+  // Sequence number
+  double seq_no = 103;
+  // Special assessment code
+  string spass_cd = 104;
+  // Special circuit code
+  double spc_cir_cd = 105;
+  // Special circuit tax
+  string spc_cir_tx = 106;
+  // Special circuit year
+  double spc_cir_yr = 107;
+  // Special features
+  double spec_feat = 108;
+  // State parcel
+  string state_par = 109;
+  // Tax authority code
+  string tax_auth_c = 110;
+  // Total living area
+  double tot_lvg_ar = 111;
+  // Total value non-school district
+  double tv_nsd = 112;
+  // Total value school district
+  double tv_sd = 113;
+  // Township
+  string twn = 114;
+  // Value indicator code 1
+  string vi_cd1 = 115;
+  // Value indicator code 2
+  string vi_cd2 = 116;
+  // Year value transferred
+  double yr_val_trn = 117;
+}

@@ -1,0 +1,18 @@
+# For details on buf.yaml configuration, visit https://buf.build/docs/configuration/v2/buf-yaml
+version: v2
+modules:
+  - name: buf.build/florida-api/protos
+    path: protos
+deps:
+  - buf.build/googleapis/googleapis
+lint:
+  use:
+    - STANDARD
+    - FILE_LOWER_SNAKE_CASE
+  except:
+    - PACKAGE_VERSION_SUFFIX
+    - SERVICE_SUFFIX
+    - DIRECTORY_SAME_PACKAGE
+breaking:
+  use:
+    - FILE
